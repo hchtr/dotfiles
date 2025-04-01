@@ -1,13 +1,12 @@
 set $mod Mod1
-set $font -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1
+set $font DejaVu Sans Mono
 
-font $font
+font pango:$font 16
 
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+q kill
+bindsym $mod+Return exec xterm -fa '$font' -fs 16
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -65,9 +64,9 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -f '$font' -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
 bindsym Left resize shrink width 10 px or 10 ppt
