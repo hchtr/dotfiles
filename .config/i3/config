@@ -68,6 +68,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Escape exit
 
 mode "resize" {
 bindsym Left resize shrink width 10 px or 10 ppt
