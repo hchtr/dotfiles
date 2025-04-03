@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font Liberation Mono
+set $font DejaVu Sans Mono
 
 font pango:$font 16
 
@@ -80,7 +80,6 @@ bindsym Return mode "default"
 bindsym Escape mode "default"
 bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 bar {
