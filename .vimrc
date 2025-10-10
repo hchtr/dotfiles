@@ -7,7 +7,7 @@ set expandtab
 set wrap
 set linebreak
 set termguicolors
-colo blue
+colo default
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
