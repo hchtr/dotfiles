@@ -1,5 +1,5 @@
 syntax on
-set number
+set number relativenumber
 set tabstop=1
 set shiftwidth=1
 set autoindent
