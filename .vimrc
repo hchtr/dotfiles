@@ -4,8 +4,6 @@ set tabstop=1
 set shiftwidth=1
 set autoindent
 set expandtab
-set wrap
-set linebreak
 set termguicolors
 colo default
 
