@@ -1,13 +1,13 @@
 set $mod Mod1
 set $font Iosevka
 
-font pango:$font 16
+font pango:$font 23
 
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec xterm -fa '$font' -fs 16
-bindsym $mod+d exec rofi -font '$font 16' -show drun
+bindsym $mod+Return exec xterm -fa '$font' -fs 23
+bindsym $mod+d exec rofi -font '$font 23' -show drun
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
