@@ -5,7 +5,8 @@ set shiftwidth=1
 set autoindent
 set expandtab
 set termguicolors
-colo default
+set background=dark
+colo lunaperche
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
