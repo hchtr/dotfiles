@@ -1,4 +1,4 @@
-PS1='\[\033[0m\][hchtr@\[\033[1;35m\]localhost\[\033[0m\] ~]# '
+PS1='\[\033[38;5;152m\]hchtr@iam\[\033[00m\]:\w$ '
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
