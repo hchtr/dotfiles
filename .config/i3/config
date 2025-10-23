@@ -6,7 +6,7 @@ font pango:$font 23
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec xterm -fa '$font' -fs 23
+bindsym $mod+Return exec xterm -fa '$font' -fs 23 -e "tmux"
 bindsym $mod+d exec rofi -font '$font 23' -show drun
 
 bindsym $mod+Left focus left
