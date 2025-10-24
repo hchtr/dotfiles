@@ -4,15 +4,15 @@ set -euo pipefail
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 RED='\033[0;31m'
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
+GREEN='\033[0;92m'
+BLUE='\033[0;94m'
 NC='\033[0m'
 
-echo -e "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}"
+echo -en "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_BASE
-echo -e "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}"
+echo -en "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_SDL
-echo -e "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}"
+echo -en "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_VBOX
 
 if [ "$INSTALL_BASE" = "1" ]; then
