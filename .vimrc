@@ -7,7 +7,6 @@ set shiftwidth=2
 set autoindent
 set expandtab
 set wildmenu
-set colorcolumn=80
 set termguicolors
 set background=dark
 colo lunaperche 
