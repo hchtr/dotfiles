@@ -3,12 +3,17 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-read -rp "(?) Install base packages (0 = no, 1 = yes): " INSTALL_BASE
-read -rp "(?) Install SDL build dependencies (0 = no, 1 = yes): " INSTALL_SDL
-read -rp "(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): " INSTALL_VBOX
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+read -rp "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}" INSTALL_BASE
+read -rp "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}" INSTALL_SDL
+read -rp "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}" INSTALL_VBOX
 
 if [ "$INSTALL_BASE" = "1" ]; then
-  echo "(...) Installing base packages"
+  echo -e "(...) Installing base packages"
   sudo apt update -qq >/dev/null 2>&1
   sudo apt install -y -qq \
     xorg i3 vim git pulseaudio alsa-utils pavucontrol rofi \
@@ -16,7 +21,7 @@ if [ "$INSTALL_BASE" = "1" ]; then
 fi
 
 if [ "$INSTALL_SDL" = "1" ]; then
-  echo "(...) Installing SDL build dependencies"
+  echo -e "(...) Installing SDL build dependencies"
   sudo apt update -qq >/dev/null 2>&1
   sudo apt install -y -qq \
     build-essential git make pkg-config cmake ninja-build gnome-desktop-testing \
@@ -28,16 +33,16 @@ if [ "$INSTALL_SDL" = "1" ]; then
 fi
 
 if [ "$INSTALL_VBOX" = "1" ]; then
-  echo "(...) Installing VBox Linux Guest Additions"
+  echo -e "(...) Installing VBox Linux Guest Additions"
   if sudo mount /dev/cdrom /mnt >/dev/null 2>&1; then
     if sudo sh /mnt/VBoxLinuxAdditions.run >/dev/null 2>&1; then
-      echo "(!) Done installing VBox Linux Guest Additions"
+      echo -e "${GREEN}(!) Done installing VBox Linux Guest Additions${NC}"
     else
-      echo "(X) Failed installing VBox Linux Guest Additions"
+      echo -e "${RED}(X) Failed installing VBox Linux Guest Additions${NC}"
     fi
     sudo umount /mnt >/dev/null 2>&1
   else
-    echo "(X) Insert CD image first"
+    echo -e "${RED}(X) Insert CD image first${NC}"
   fi
 fi
 
@@ -63,4 +68,4 @@ for file in .fehbg .tmux.conf .vimrc .xinitrc .Xresources; do
   ln -s "$DOTFILES_DIR/$file" "$HOME/$file"
 done
 
-echo "(!) Dotfiles setup complete"
+echo -e "${GREEN}(!) Dotfiles setup complete${NC}"
