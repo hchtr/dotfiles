@@ -3,11 +3,11 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-read -rp "(hchtr) Install base packages? (0 = no, 1 = yes): " INSTALL_BASE
-read -rp "(hchtr) Install SDL build dependencies? (0 = no, 1 = yes): " INSTALL_SDL
+read -rp "(?) Install base packages (0 = no, 1 = yes): " INSTALL_BASE
+read -rp "(?) Install SDL build dependencies (0 = no, 1 = yes): " INSTALL_SDL
 
 if [ "$INSTALL_BASE" = "1" ]; then
-    echo "(hchtr) Installing base packages..."
+    echo "(...) Installing base packages"
     sudo apt update -qq >/dev/null 2>&1
     sudo apt install -y -qq \
         xorg i3 vim git pulseaudio alsa-utils pavucontrol rofi \
@@ -15,7 +15,7 @@ if [ "$INSTALL_BASE" = "1" ]; then
 fi
 
 if [ "$INSTALL_SDL" = "1" ]; then
-    echo "(hchtr) Installing SDL build dependencies..."
+    echo "(...) Installing SDL build dependencies"
     sudo apt update -qq >/dev/null 2>&1
     sudo apt install -y -qq \
         build-essential git make pkg-config cmake ninja-build gnome-desktop-testing \
@@ -48,4 +48,4 @@ for file in .fehbg .tmux.conf .vimrc .xinitrc .Xresources; do
     ln -s "$DOTFILES_DIR/$file" "$HOME/$file"
 done
 
-echo "(hchtr) Dotfiles setup complete!"
+echo "(!) Dotfiles setup complete"
