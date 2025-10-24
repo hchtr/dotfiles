@@ -1,12 +1,16 @@
 set nocompatible
+
 syntax on
-filetype off
-set number
+filetype on
+
 set tabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
+
 set wildmenu
+
+set number
 set termguicolors
 set background=dark
 colo lunaperche 
