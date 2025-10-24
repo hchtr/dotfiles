@@ -8,9 +8,12 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-read -rp "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}" INSTALL_BASE
-read -rp "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}" INSTALL_SDL
-read -rp "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}" INSTALL_VBOX
+echo -e "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}"
+read -r INSTALL_BASE
+echo -e "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}"
+read -r INSTALL_SDL
+echo -e "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}"
+read -r INSTALL_VBOX
 
 if [ "$INSTALL_BASE" = "1" ]; then
   echo -e "(...) Installing base packages"
