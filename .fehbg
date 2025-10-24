@@ -1,0 +1,9 @@
+#!/bin/sh
+
+WALLPAPER="${HOME}/.config/i3/wallpaper.png"
+
+if [ -f "$WALLPAPER" ]; then
+  feh --bg-scale "$WALLPAPER"
+else
+  echo "Wallpaper not found: $WALLPAPER"
+fi
