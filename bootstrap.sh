@@ -12,7 +12,7 @@ echo -en "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_BASE
 echo -en "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_SDL
-echo -en "${BLUE}(?) Install VBox Linux Guest Additions [WARNING: Insert CD first] (0 = no, 1 = yes): ${NC}"
+echo -en "${BLUE}(?) Install VBox Linux Guest Additions ${RED}[WARNING: Insert CD first]${BLUE} (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_VBOX
 
 if [ "$INSTALL_BASE" = "1" ]; then
