@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font Iosevka
+set $font DejaVu Sans Mono
 
 font pango:$font 23
 
