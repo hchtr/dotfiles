@@ -6,13 +6,14 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 RED='\033[0;31m'
 GREEN='\033[0;92m'
 BLUE='\033[0;94m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
 echo -en "${BLUE}(?) Install base packages (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_BASE
 echo -en "${BLUE}(?) Install SDL build dependencies (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_SDL
-echo -en "${BLUE}(?) Install VBox Linux Guest Additions ${RED}[WARNING: Insert CD first]${BLUE} (0 = no, 1 = yes): ${NC}"
+echo -en "${BLUE}(?) Install VBox Linux Guest Additions ${RED}[WARNING: Ensure not in TTY]${BLUE} (0 = no, 1 = yes): ${NC}"
 read -r INSTALL_VBOX
 
 if [ "$INSTALL_BASE" = "1" ]; then
@@ -39,13 +40,13 @@ if [ "$INSTALL_VBOX" = "1" ]; then
   echo -e "(...) Installing VBox Linux Guest Additions"
   if sudo mount /dev/cdrom /mnt >/dev/null 2>&1; then
     if sudo sh /mnt/VBoxLinuxAdditions.run >/dev/null 2>&1; then
-      echo -e "${GREEN}(!) Done installing VBox Linux Guest Additions${NC}"
+      echo -e "${GREEN}  (!) Done installing VBox Linux Guest Additions${NC}"
     else
-      echo -e "${RED}(X) Failed installing VBox Linux Guest Additions${NC}"
+      echo -e "${RED}  (X) Failed installing VBox Linux Guest Additions${NC}"
     fi
     sudo umount /mnt >/dev/null 2>&1
   else
-    echo -e "${RED}(X) Insert CD image first${NC}"
+    echo -e "${YELLOW}  (^) Insert guest additions CD image first${NC}"
   fi
 fi
 
