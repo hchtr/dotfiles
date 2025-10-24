@@ -40,13 +40,13 @@ if [ "$INSTALL_VBOX" = "1" ]; then
   echo -e "(...) Installing VBox Linux Guest Additions"
   if sudo mount /dev/cdrom /mnt >/dev/null 2>&1; then
     if sudo sh /mnt/VBoxLinuxAdditions.run >/dev/null 2>&1; then
-      echo -e "${GREEN}  (!) Done installing VBox Linux Guest Additions${NC}"
+      echo -e "${GREEN}(!) Done installing VBox Linux Guest Additions${NC}"
     else
-      echo -e "${RED}  (X) Failed installing VBox Linux Guest Additions${NC}"
+      echo -e "${RED}(X) Failed installing VBox Linux Guest Additions${NC}"
     fi
     sudo umount /mnt >/dev/null 2>&1
   else
-    echo -e "${YELLOW}  (^) Insert guest additions CD image first${NC}"
+    echo -e "${YELLOW}(^) Insert guest additions CD image first${NC}"
   fi
 fi
 
