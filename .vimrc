@@ -1,12 +1,16 @@
+set nocompatible
 syntax on
-set number relativenumber
-set tabstop=1
-set shiftwidth=1
+filetype off
+set number
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set expandtab
+set wildmenu
+set colorcolumn=80
 set termguicolors
 set background=dark
-colo lunaperche
+colo lunaperche 
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
