@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WALLPAPER="${HOME}/.config/i3/wallpaper.jpg"
+WALLPAPER="${HOME}/.config/i3/wallpaper.png"
 
 if [ -f "$WALLPAPER" ]; then
   feh --bg-scale "$WALLPAPER"
