@@ -67,7 +67,7 @@ for file in "$DOTFILES_DIR/.config/i3status/"*; do
   ln -s "$file" "$HOME/.config/i3status/$filename"
 done
 
-for file in .fehbg .tmux.conf .vimrc .xinitrc .Xresources; do
+for file in .fehbg .tmux.conf .xinitrc .Xresources; do
   rm -f "$HOME/$file"
   ln -s "$DOTFILES_DIR/$file" "$HOME/$file"
 done
