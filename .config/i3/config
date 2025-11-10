@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font DejaVu Sans Mono
+set $font Firacode
 
 font pango:$font 23
 
