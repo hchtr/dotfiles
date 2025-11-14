@@ -20,7 +20,7 @@ if [ "$INSTALL_BASE" = "1" ]; then
   echo -e "(...) Installing base packages"
   sudo apt update -qq >/dev/null 2>&1
   sudo apt install -y -qq \
-    xorg i3 vim git pulseaudio alsa-utils pavucontrol rofi \
+    xorg i3 emacs git pulseaudio alsa-utils pavucontrol rofi \
     tree zip unzip cmake build-essential tmux feh >/dev/null 2>&1
 fi
 
