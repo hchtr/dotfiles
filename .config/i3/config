@@ -1,15 +1,16 @@
 set $mod Mod1
-set $font Firacode
+set $font DejaVu Sans Mono
+set $font_size 20
 
-font pango:$font 23
+font pango:$font $font_size
 
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec xterm -fa '$font' -fs 23
-bindsym $mod+d exec rofi -font '$font 23' -show drun
+bindsym $mod+Return exec xterm -fa '$font' -fs $font_size
+bindsym $mod+d exec rofi -font '$font $font_size' -show drun
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
