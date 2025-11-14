@@ -21,7 +21,7 @@ if [ "$INSTALL_BASE" = "1" ]; then
   sudo apt update -qq >/dev/null 2>&1
   sudo apt install -y -qq \
     xorg i3 vim git pulseaudio alsa-utils pavucontrol rofi \
-    tree zip unzip cmake build-essential tmux feh htop fonts-firacode >/dev/null 2>&1
+    tree zip unzip cmake build-essential tmux feh >/dev/null 2>&1
 fi
 
 if [ "$INSTALL_SDL" = "1" ]; then
