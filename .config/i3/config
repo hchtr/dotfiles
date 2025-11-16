@@ -1,6 +1,6 @@
 set $mod Mod1
 set $font DejaVu Sans Mono
-set $font_size 16.5
+set $font_size 16
 
 font pango:$font $font_size
 
