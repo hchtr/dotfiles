@@ -10,7 +10,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec xterm -fa '$font' -fs $font_size
 bindsym $mod+d exec rofi -font '$font $font_size' -show drun
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 for_window [class=".*"] split v
 
 bindsym $mod+Left focus left
