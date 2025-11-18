@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font DejaVu Sans Mono
+set $font Jetbrains Mono
 set $font_size 16
 
 font pango:$font $font_size
