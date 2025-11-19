@@ -20,8 +20,9 @@ if [ "$INSTALL_BASE" = "1" ]; then
   echo -e "(...) Installing base packages"
   sudo apt update -qq >/dev/null 2>&1
   sudo apt install -y -qq \
-    xorg i3 emacs git pulseaudio alsa-utils pavucontrol rofi \
-    tree zip unzip cmake build-essential tmux feh fonts-jetbrains-mono >/dev/null 2>&1
+    xorg i3 emacs vim git pulseaudio alsa-utils pavucontrol rofi \
+    tree zip unzip cmake build-essential tmux feh fonts-jetbrains-mono \
+    htop firefox-esr >/dev/null 2>&1
 fi
 
 if [ "$INSTALL_SDL" = "1" ]; then
