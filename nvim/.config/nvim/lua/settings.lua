@@ -28,3 +28,4 @@ vim.g.netrw_winsize = 20
 vim.g.netrw_altv = 1
 
 vim.opt.conceallevel = 2
+vim.opt.completeopt = { "menu", "menuone", "noselect" }

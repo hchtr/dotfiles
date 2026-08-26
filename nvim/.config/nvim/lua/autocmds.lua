@@ -13,20 +13,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 --
-vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile"}, {
-    pattern = { "*.c", "*.h" },
-    callback = function()
-        if vim.fn.executable("clangd") == 1 then
-            vim.lsp.buf_attach_client(0, vim.lsp.start_client({
-                name = "clangd",
-                cmd = { "clangd" },
-                filetypes = { "c" },
-            }))
-            vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
-        end
-    end,
-})
---
 local fold_group = vim.api.nvim_create_augroup("AutoPersistenceFolds", { clear = true })
 
 vim.opt.viewoptions = { "folds", "cursor" }
