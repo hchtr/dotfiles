@@ -1,3 +1,5 @@
+export HCHTR_HOME="/home/hchtr"
+
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/hchtr/.config/i3/wallpaper.jpg' 

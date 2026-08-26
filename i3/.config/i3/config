@@ -8,7 +8,7 @@ font pango:$font $font_size
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec xterm -fa '$font' -fs $font_size
+bindsym $mod+Return exec xfce4-terminal 
 bindsym $mod+d exec rofi -font '$font $font_size' -show drun
 
 workspace_layout tabbed
