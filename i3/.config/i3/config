@@ -10,6 +10,7 @@ tiling_drag modifier titlebar
 
 bindsym $mod+Return exec xfce4-terminal 
 bindsym $mod+d exec rofi -font '$font $font_size' -show drun
+bindsym $mod+l exec i3lock
 
 workspace_layout tabbed
 
