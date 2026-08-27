@@ -14,7 +14,8 @@ bindsym $mod+l exec i3lock
 
 workspace_layout tabbed
 
-default_border pixel 0 
+default_border pixel 0
+focus_on_window_activation focus
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -35,6 +36,7 @@ bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
+
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
@@ -90,7 +92,6 @@ bindsym $mod+r mode "default"
 bindsym $mod+r mode "resize"
 
 bar {
-status_command i3status
 font pango:$font $font_bar_size
     colors {
         background #282828
