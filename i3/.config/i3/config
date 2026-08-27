@@ -92,4 +92,15 @@ bindsym $mod+r mode "resize"
 bar {
 status_command i3status
 font pango:$font $font_bar_size
+    colors {
+        background #282828
+        statusline #a89984
+        separator  #458588
+
+        #                  Border  Background Text
+        focused_workspace  #458588 #458588    #282828
+        active_workspace   #458588 #458588    #282828
+        inactive_workspace #282828 #282828    #a89984
+        urgent_workspace   #cc241d #cc241d    #282828
+    }
 }
