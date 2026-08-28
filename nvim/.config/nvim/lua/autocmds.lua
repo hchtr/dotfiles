@@ -7,21 +7,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 --
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.cmd("Vex")
-  end,
-})
---
-vim.api.nvim_create_autocmd("BufEnter", {
-  nested = true,
-  callback = function()
-    if vim.fn.winnr("$") == 1 and vim.bo.filetype == "netrw" then
-      vim.cmd("quit")
-    end
-  end,
-})
---
 local fold_group = vim.api.nvim_create_augroup("AutoPersistenceFolds", { clear = true })
 
 vim.opt.viewoptions = { "folds", "cursor" }

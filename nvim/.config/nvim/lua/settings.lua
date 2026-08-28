@@ -22,10 +22,5 @@ opt.hlsearch = true
 opt.incsearch = true
 opt.smartcase = true
 
-vim.g.netrw_banner = 0       
-vim.g.netrw_browse_split = 4 
-vim.g.netrw_winsize = 20     
-vim.g.netrw_altv = 1
-
-vim.opt.conceallevel = 2
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+opt.conceallevel = 2
+opt.completeopt = { "menu", "menuone", "noselect" }
