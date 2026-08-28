@@ -1,3 +1,6 @@
+alias ll='ls -la'
+alias tal='tree -a -L'
+
 typst_watch() {
     local filename="$1"
     if [ -z "$filename" ]; then
