@@ -3,6 +3,7 @@ local opt = vim.opt
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 opt.autoread = true
+opt.shortmess:append("I")
 opt.autochdir = true
 
 opt.tabstop = 4
