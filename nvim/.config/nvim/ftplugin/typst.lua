@@ -4,7 +4,7 @@ if vim.fn.executable("tinymist") == 1 then
   vim.lsp.start({
     name = "tinymist",
     cmd = { "tinymist" }, 
-    root_dir = lsp_utils.get_root_dir({ ".git", "main.typ" }),
+    root_dir = lsp_utils.get_root_dir({ ".git" }),
     settings = { exportPdf = "onType", semanticTokens = "enable", formatterMode = "typstyle" },
   })
   lsp_utils.setup_buffer_lsp()
