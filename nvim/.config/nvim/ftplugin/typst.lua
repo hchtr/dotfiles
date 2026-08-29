@@ -1,30 +1,17 @@
-local typst_job_id = nil
+local lsp_utils = require("utils.lsp")
 
-local function stop_typst_env()
-  if typst_job_id then
-    vim.fn.jobstop(typst_job_id)
-    typst_job_id = nil
-    vim.notify("Typst workspace stopped.", vim.log.levels.INFO)
-  end
+if vim.fn.executable("tinymist") == 1 then
+  vim.lsp.start({
+    name = "tinymist",
+    cmd = { "tinymist" }, 
+    root_dir = lsp_utils.get_root_dir({ ".git", "main.typ" }),
+    settings = { exportPdf = "onType", semanticTokens = "enable", formatterMode = "typstyle" },
+  })
+  lsp_utils.setup_buffer_lsp()
 end
 
-local function start_typst_env()
-  if typst_job_id then
-    vim.notify("Workspace is already running!", vim.log.levels.WARN)
-    return
-  end
+vim.keymap.set("n", "<leader>pv", function()
+  local pdf_path = vim.fn.expand("%:p:r") .. ".pdf"
+  vim.fn.jobstart({ "sioyek", pdf_path }, { detach = true })
+end, { buffer = true, desc = "Open Typst PDF Preview" })
 
-  local filename = vim.fn.expand("%")
-  if filename == "" then return end
-
-  typst_job_id = vim.fn.jobstart({ "bash", "-i", "-c", "typst_watch " .. vim.fn.shellescape(filename) })
-  vim.notify("Typst workspace started.", vim.log.levels.INFO)
-end
-
-vim.keymap.set("n", "<LocalLeader>r", start_typst_env, { buffer = true, desc = "Start Typst Workspace" })
-vim.keymap.set("n", "<LocalLeader>q", stop_typst_env, { buffer = true, desc = "Stop Typst Workspace" })
-
-vim.api.nvim_create_autocmd({ "BufDelete", "VimLeavePre" }, {
-  buffer = vim.api.nvim_get_current_buf(),
-  callback = stop_typst_env,
-})

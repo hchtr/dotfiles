@@ -1,6 +1,4 @@
-require("utils")
 require("settings")
 require("autocmds")
 require("keymaps")
-require("lsp")
 require("fzf")

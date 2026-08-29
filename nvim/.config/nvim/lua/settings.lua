@@ -25,3 +25,6 @@ opt.smartcase = true
 
 opt.conceallevel = 2
 opt.completeopt = { "menu", "menuone", "noselect" }
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
