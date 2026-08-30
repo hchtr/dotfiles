@@ -9,7 +9,6 @@ if vim.fn.executable("clangd") == 1 then
   vim.lsp.start({
     name = "clangd",
     cmd = { "clangd" },
-    root_dir = lsp_utils.get_root_dir({ ".git", "CMakeLists.txt" }),
   })
   lsp_utils.setup_buffer_lsp()
 end

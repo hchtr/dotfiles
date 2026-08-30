@@ -32,12 +32,5 @@ function M.setup_buffer_lsp()
   end, { buffer = true, expr = true, silent = true, noremap = true })
 end
 
-function M.get_root_dir(root_markers)
-  local current_file = vim.api.nvim_buf_get_name(0)
-  local matched_paths = vim.fs.find(root_markers, { upward = true, path = current_file })
-  local raw_dir = #matched_paths > 0 and vim.fs.dirname(matched_paths) or vim.fs.dirname(current_file)
-  return vim.fn.fnamemodify(raw_dir, ":p")
-end
-
 return M
 
