@@ -4,8 +4,9 @@
 
 [alias]
 	s = status
-	a = add .
+	a = add
 	c = commit -m
-	ps = push origin main
+	ps = push origin HEAD
+	pl = pull origin HEAD
 	d = diff
 	dc = diff --cached
