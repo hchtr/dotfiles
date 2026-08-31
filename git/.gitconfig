@@ -6,6 +6,6 @@
 	s = status
 	a = add .
 	c = commit -m
-	p = push origin main
+	ps = push origin main
 	d = diff
 	dc = diff --cached
