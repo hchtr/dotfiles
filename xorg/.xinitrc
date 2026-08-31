@@ -4,4 +4,6 @@ fi
 
 picom -b &
 
+idesk &
+
 exec i3
