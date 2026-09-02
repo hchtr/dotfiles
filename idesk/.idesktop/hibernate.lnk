@@ -1,0 +1,10 @@
+table Icon
+  Caption: Hibernate 
+  Command: systemctl hibernate 
+  Icon: /home/hchtr/.idesktop/icons/hibernate.png
+  Width: 60 
+  Height: 60 
+  X: 25
+  Y: 225
+end
+
