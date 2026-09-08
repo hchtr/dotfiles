@@ -1,6 +1,6 @@
 set $mod Mod1
-set $font Jetbrains Mono 
-set $font_size 16
+set $font IBM Plex Mono 
+set $font_size 16 
 set $font_bar_size 13
 
 font pango:$font $font_size

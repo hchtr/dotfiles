@@ -2,18 +2,17 @@
 size = 12.0
 
 [font.normal]
-family = "Jetbrains Mono"
+family = "IBM Plex Mono"
 style = "Regular"
 
 [font.bold]
-family = "Jetbrains Mono"
+family = "IBM Plex Mono"
 style = "Bold"
 
 [font.italic]
-family = "Jetbrains Mono"
+family = "IBM Plex Mono"
 style = "Italic"
 
 [font.bold_italic]
-family = "Jetbrains Mono"
+family = "IBM Plex Mono"
 style = "Bold Italic"
-
