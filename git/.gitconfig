@@ -10,3 +10,5 @@
 	pl = pull origin HEAD
 	d = diff
 	dc = diff --cached
+	r = reset
+	cl = clean
