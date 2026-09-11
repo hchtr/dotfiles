@@ -1,4 +1,4 @@
-export HCHTR_HOME="/home/hchtr"
+export HCHTR_HOME="$HOME"
 
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
