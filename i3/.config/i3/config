@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font IBM Plex Mono 
+set $font Comic Code Regular
 set $font_size 16 
 set $font_bar_size 13
 
@@ -17,11 +17,11 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -font '$font $font_size' -show drun
 bindsym $mod+l exec i3lock
 
-workspace_layout tabbed
+workspace_layout tabbed 
 
 gaps outer 10
 
-default_border pixel 0
+default_border pixel 0 
 focus_on_window_activation focus
 
 bindsym $mod+Left focus left
