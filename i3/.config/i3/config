@@ -1,5 +1,5 @@
 set $mod Mod1
-set $font Comic Code Regular
+set $font Comic Code
 set $font_size 16 
 set $font_bar_size 13
 

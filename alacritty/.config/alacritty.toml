@@ -2,17 +2,17 @@
 size = 12.0
 
 [font.normal]
-family = "Comic Code Medium"
+family = "Comic Code"
 style = "Regular"
 
 [font.bold]
-family = "Comic Code Bold"
+family = "Comic Code"
 style = "Bold"
 
 [font.italic]
-family = "Comic Code Italic"
+family = "Comic Code"
 style = "Italic"
 
 [font.bold_italic]
-family = "Comic Code Bold Italic"
+family = "Comic Code"
 style = "Bold Italic"
