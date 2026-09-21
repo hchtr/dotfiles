@@ -17,7 +17,7 @@ opt.number = true
 opt.relativenumber = true
 
 opt.termguicolors = false
-vim.cmd("colo retrobox")
+vim.cmd("colo lunaperche")
 
 opt.hlsearch = true
 opt.incsearch = true
