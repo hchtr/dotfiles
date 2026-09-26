@@ -13,9 +13,12 @@ client.urgent           #cc241d #cc241d #282828 #cc241d   #cc241d
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec alacritty 
-bindsym $mod+d exec rofi -font '$font $font_size' -show drun
-bindsym $mod+l exec i3lock
+exec --no-startup-id picom -b
+exec --no-startup-id idesk
+
+bindsym $mod+Return exec --no-startup-id konsole
+bindsym $mod+d exec --no-startup-id rofi -font '$font $font_size' -show drun
+bindsym $mod+l exec --no-startup-id i3lock
 
 workspace_layout tabbed
 
