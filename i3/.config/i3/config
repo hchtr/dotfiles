@@ -13,6 +13,7 @@ client.urgent           #cc241d #cc241d #282828 #cc241d   #cc241d
 floating_modifier $mod
 tiling_drag modifier titlebar
 
+exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 exec --no-startup-id idesk
 
