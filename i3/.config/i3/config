@@ -5,7 +5,7 @@ set $font_bar_size 13
 
 font pango:$font $font_size
 
-client.focused          #000000 #000000 #FFFFFF #000000 #000000
+client.focused          #000000 #000000 #5FAFAF #000000 #000000
 client.focused_inactive #000000 #000000 #888888 #000000 #000000
 client.unfocused        #000000 #000000 #555555 #000000 #000000
 client.urgent           #000000 #000000 #FF5555 #000000 #000000
@@ -16,6 +16,7 @@ tiling_drag modifier titlebar
 
 exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id idesk
 
 bindsym $mod+Return exec --no-startup-id konsole
@@ -110,7 +111,7 @@ font pango:$font $font_bar_size
 	statusline #888888
 	separator  #555555
 	
-	focused_workspace  #000000 #000000 #FFFFFF
+	focused_workspace  #000000 #000000 #5FAFAF
 	active_workspace   #000000 #000000 #AAAAAA
 	inactive_workspace #000000 #000000 #555555
 	urgent_workspace   #000000 #000000 #FF5555
