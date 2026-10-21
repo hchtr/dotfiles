@@ -7,23 +7,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 --
-local fold_group = vim.api.nvim_create_augroup("AutoPersistenceFolds", { clear = true })
-
-vim.opt.viewoptions = { "folds", "cursor" }
-
-vim.api.nvim_create_autocmd("BufWinLeave", {
-  group = fold_group,
-  pattern = "*.*", 
-  callback = function()
-    vim.cmd("silent! mkview")
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufWinEnter", {
-  group = fold_group,
-  pattern = "*.*",
-  callback = function()
-    vim.cmd("silent! loadview")
-  end,
-})
---
