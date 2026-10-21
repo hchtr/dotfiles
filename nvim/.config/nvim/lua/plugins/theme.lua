@@ -1,18 +1,13 @@
--- ~/dotfiles/nvim/.config/nvim/lua/plugins/theme.lua
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,    -- Make sure it loads immediately on boot
-    priority = 1000, -- Highest priority over other tools
-    config = function()
-      require("tokyonight").setup({
-        style = "night", -- Choose between: 'storm', 'moon', 'night', or 'day'
-        transparent = false, -- Set to true if you want your terminal bg to pass through
-      })
-      
-      -- Activate the theme inside Neovim
-      vim.cmd([[colorscheme tokyonight-night]])
-    end,
-  }
+  "oxidescheme/nvim",
+  name = "oxide",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("oxide").setup({
+      -- Add your custom oxide options here if you want
+    })
+    vim.cmd.colorscheme("oxide")
+  end,
 }
 
