@@ -14,7 +14,6 @@ opt.number = true
 opt.relativenumber = true
 
 opt.termguicolors = true 
-vim.cmd("colo lunaperche")
 
 opt.hlsearch = true
 opt.incsearch = true
