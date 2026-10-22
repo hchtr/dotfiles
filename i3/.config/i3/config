@@ -5,11 +5,11 @@ set $font_bar_size 13
 
 font pango:$font $font_size
 
-client.focused          #000000 #000000 #5FAFAF #000000 #000000
-client.focused_inactive #000000 #000000 #888888 #000000 #000000
-client.unfocused        #000000 #000000 #555555 #000000 #000000
-client.urgent           #000000 #000000 #FF5555 #000000 #000000
-client.background 		#000000
+client.focused          #0C0C0C #0C0C0C #5FAFAF #0C0C0C #0C0C0C
+client.focused_inactive #0C0C0C #0C0C0C #888888 #0C0C0C #0C0C0C
+client.unfocused        #0C0C0C #0C0C0C #555555 #0C0C0C #0C0C0C
+client.urgent           #0C0C0C #0C0C0C #FF5555 #0C0C0C #0C0C0C
+client.background 		#0C0C0C
 
 floating_modifier $mod
 tiling_drag modifier titlebar
@@ -107,13 +107,13 @@ bar {
 status_command i3status
 font pango:$font $font_bar_size
     colors {
-    background #000000
+    background #0C0C0C
 	statusline #888888
 	separator  #555555
 	
-	focused_workspace  #000000 #000000 #5FAFAF
-	active_workspace   #000000 #000000 #AAAAAA
-	inactive_workspace #000000 #000000 #555555
-	urgent_workspace   #000000 #000000 #FF5555
+	focused_workspace  #0C0C0C #0C0C0C #5FAFAF
+	active_workspace   #0C0C0C #0C0C0C #AAAAAA
+	inactive_workspace #0C0C0C #0C0C0C #555555
+	urgent_workspace   #0C0C0C #0C0C0C #FF5555
 	}
 }
