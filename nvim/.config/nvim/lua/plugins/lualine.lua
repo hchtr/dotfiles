@@ -5,7 +5,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = "gruvbox",       -- Automatically matches your active colorscheme
+          theme = "auto",       -- Automatically matches your active colorscheme
           icons_enabled = false, -- Keeps your preferred font, stripping graphic symbols
           
           -- Uses flat text separators instead of graphical triangle icons

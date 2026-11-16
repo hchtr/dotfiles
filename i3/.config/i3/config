@@ -117,3 +117,6 @@ font pango:$font $font_bar_size
 	urgent_workspace   #000000 #000000 #FF5555
 	}
 }
+
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id xsetroot -cursor_name left_ptr

@@ -14,6 +14,7 @@ opt.number = true
 opt.relativenumber = true
 
 opt.termguicolors = true 
+vim.cmd.colorscheme("habamax") 
 
 opt.hlsearch = true
 opt.incsearch = true
