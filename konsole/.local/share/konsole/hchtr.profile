@@ -5,7 +5,7 @@ ColorScheme=Campbell
 Font=ComicCodeLigaturesRegul Nerd Font Mono,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
-Name=Profile 1
+Name=hchtr
 Parent=FALLBACK/
 TerminalCenter=true
 TerminalMargin=0
