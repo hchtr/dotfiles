@@ -1,0 +1,41 @@
+set -euo pipefail
+
+theme=${1:?usage: set-cursor THEME [SIZE]}
+size=${2:-}
+
+set_key() {
+  local file=$1 key=$2 line=$3
+  [ -e "$file" ] || { echo "skip (missing): $file" >&2; return 0; }
+  if grep -q "^$key" "$file"; then
+    local esc=${line//\\/\\\\}
+    esc=${esc//|/\\|}
+    esc=${esc//&/\\&}
+    sed -i --follow-symlinks "s|^$key.*|$esc|" "$file"
+  else
+    printf '%s\n' "$line" >> "$file"
+  fi
+}
+
+found=0
+for d in ~/.icons /usr/share/icons ~/.local/share/icons; do
+  [ -d "$d/$theme" ] && found=1
+done
+[ "$found" -eq 1 ] || echo "warning: theme '$theme' not found in icon dirs" >&2
+
+for f in ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini; do
+  set_key "$f" "gtk-cursor-theme-name=" "gtk-cursor-theme-name=$theme"
+  if [ -n "$size" ]; then
+    set_key "$f" "gtk-cursor-theme-size=" "gtk-cursor-theme-size=$size"
+  fi
+done
+
+set_key ~/.Xresources "Xcursor.theme:" "Xcursor.theme: $theme"
+if [ -n "$size" ]; then
+  set_key ~/.Xresources "Xcursor.size:" "Xcursor.size: $size"
+fi
+set_key ~/.icons/default/index.theme "Inherits=" "Inherits=$theme"
+
+command -v xrdb >/dev/null && xrdb -merge ~/.Xresources || true
+command -v xsetroot >/dev/null && xsetroot -cursor_name left_ptr || true
+
+echo "Cursor set to $theme${size:+ (size $size)}."
