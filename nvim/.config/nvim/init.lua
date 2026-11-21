@@ -1,4 +1,4 @@
-require("settings")
+require("config.settings")
 require("config.lazy")
-require("autocmds")
+require("config.autocmds")
 
