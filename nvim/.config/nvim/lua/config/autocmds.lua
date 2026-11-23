@@ -9,16 +9,6 @@ autocmd("TextYankPost", {
   end,
 })
 
--- 'autoread' only works if nvim actually checks; do it on focus / buffer switch
-autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-  group = group,
-  callback = function()
-    if vim.fn.mode() ~= "c" then
-      vim.cmd("checktime")
-    end
-  end,
-})
-
 -- LSP keymaps for any language server
 autocmd("LspAttach", {
   group = group,
