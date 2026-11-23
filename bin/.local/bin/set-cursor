@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -euo pipefail
 
 theme=${1:?usage: set-cursor THEME [SIZE]}

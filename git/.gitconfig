@@ -2,6 +2,38 @@
 	name = hchtr
 	email = 155396759+hchtr@users.noreply.github.com
 
+[core]
+	editor = nvim
+
+[init]
+	defaultBranch = main
+
+[pull]
+	ff = only
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[merge]
+	conflictstyle = zdiff3
+
+[rerere]
+	enabled = true
+
+[branch]
+	sort = -committerdate
+
 [alias]
 	s = status
 	a = add
@@ -12,3 +44,11 @@
 	dc = diff --cached
 	r = reset
 	cl = clean
+	l = log --oneline --graph --decorate -20
+	la = log --oneline --graph --decorate --all
+	sw = switch
+	co = checkout
+	b = branch
+	amend = commit --amend --no-edit
+	unstage = reset HEAD --
+	last = log -1 --stat

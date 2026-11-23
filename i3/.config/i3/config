@@ -1,6 +1,6 @@
 set $mod Mod1
-set $font Geist Mono 
-set $font_size 16 
+set $font Geist Mono
+set $font_size 16
 set $font_bar_size 13
 
 font pango:$font $font_size
@@ -9,7 +9,7 @@ client.focused          #000000 #000000 #5FAFAF #000000 #000000
 client.focused_inactive #000000 #000000 #888888 #000000 #000000
 client.unfocused        #000000 #000000 #555555 #000000 #000000
 client.urgent           #000000 #000000 #FF5555 #000000 #000000
-client.background 		#000000
+client.background       #000000
 
 floating_modifier $mod
 tiling_drag modifier titlebar
@@ -21,7 +21,7 @@ exec --no-startup-id idesk
 
 bindsym $mod+Return exec --no-startup-id konsole
 bindsym $mod+d exec --no-startup-id rofi -font '$font $font_size' -show drun
-bindsym $mod+l exec --no-startup-id i3lock
+bindsym $mod+l exec --no-startup-id i3lock -c 000000
 
 workspace_layout tabbed
 
@@ -86,36 +86,50 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Tab workspace back_and_forth
+
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+Escape exit
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit' 'i3-msg exit'"
+
+# Media, volume and brightness keys (need pactl, brightnessctl, playerctl)
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 mode "resize" {
-bindsym Left resize shrink width 10 px or 10 ppt
-bindsym Down resize grow height 10 px or 10 ppt
-bindsym Up resize shrink height 10 px or 10 ppt
-bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-bindsym Return mode "default"
-bindsym Escape mode "default"
-bindsym $mod+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
 bar {
-status_command i3status
-font pango:$font $font_bar_size
+    status_command i3status
+    font pango:$font $font_bar_size
     colors {
-    background #000000
-	statusline #888888
-	separator  #555555
-	
-	focused_workspace  #000000 #000000 #5FAFAF
-	active_workspace   #000000 #000000 #AAAAAA
-	inactive_workspace #000000 #000000 #555555
-	urgent_workspace   #000000 #000000 #FF5555
-	}
+        background #000000
+        statusline #888888
+        separator  #555555
+
+        focused_workspace  #000000 #000000 #5FAFAF
+        active_workspace   #000000 #000000 #AAAAAA
+        inactive_workspace #000000 #000000 #555555
+        urgent_workspace   #000000 #000000 #FF5555
+        binding_mode       #000000 #000000 #FF5555
+    }
 }
 
 exec_always --no-startup-id xrdb -merge ~/.Xresources

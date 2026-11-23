@@ -6,21 +6,14 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
-  config = function()
-    -- Explicitly hardcode the keymap inside Neovim
-    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neo-tree" })
-
-    require("neo-tree").setup({
-      window = {
-        position = "left",
-        width = 35,
-      },
-      filesystem = {
-        filtered_items = {
-          visible = true,
-        },
-      },
-    })
-  end,
+  cmd = "Neotree",
+  keys = {
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
+  },
+  opts = {
+    window = { position = "left", width = 35 },
+    filesystem = {
+      filtered_items = { visible = true },
+    },
+  },
 }
-
