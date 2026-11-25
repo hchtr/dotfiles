@@ -15,6 +15,8 @@ esac
 export EDITOR=nvim
 export VISUAL=nvim
 
+export HCHTR_HOME="$HOME"
+
 # --- History ------------------------------------------------------------------
 HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=50000
