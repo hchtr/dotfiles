@@ -39,7 +39,7 @@
 	a = add
 	c = commit -m
 	ps = push origin HEAD
-	pl = pull origin HEAD
+	pl = pull
 	d = diff
 	dc = diff --cached
 	r = reset
