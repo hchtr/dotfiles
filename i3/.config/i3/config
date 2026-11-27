@@ -18,6 +18,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id idesk
+exec --no-startup-id xset s 600 5
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 bindsym $mod+Return exec --no-startup-id konsole
 bindsym $mod+d exec --no-startup-id rofi -font '$font $font_size' -show drun
